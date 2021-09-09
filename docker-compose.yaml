@@ -25,10 +25,6 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-    links:
-      - db
-      - mosquitto
-    network_mode: host
 
   mosquitto:
     container_name: homeassistant_mqtt
@@ -64,8 +60,6 @@ services:
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
       - GF_SECURITY_ALLOW_EMBEDDING=true
-    links:
-      - db
 
   db:
     container_name: hass_db
@@ -92,5 +86,3 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ={$TZ}
-    links:
-      - home-assistant
