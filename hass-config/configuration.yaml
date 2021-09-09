@@ -20,8 +20,6 @@ logbook:
 map:
 sun:
 config:
-sensor:
-  - platform: yr
 
 mqtt:
   broker: localhost
