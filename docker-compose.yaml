@@ -34,10 +34,8 @@ services:
     restart: always
     image: eclipse-mosquitto:latest
     ports:
-      # Expose public TLS port
       - 8883:8883
-      # Internal port
-      - 1883
+      - 1883:1883
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
