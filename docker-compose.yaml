@@ -25,14 +25,14 @@ services:
       - TZ=${TZ}
     privileged: true
     network_mode: host
-    port:
+    ports:
       - 8123:8123
 
   mosquitto:
     container_name: homeassistant_mqtt
     restart: always
     image: eclipse-mosquitto:latest
-    port:
+    ports:
       - 9001:9001
       - 1883:1883
     environment:
@@ -56,7 +56,7 @@ services:
       - db
     volumes:
       - ./grafana/data:/var/lib/grafana
-    port:
+    ports:
       - 3000:3000
     environment:
       - GF_AUTH_DISABLE_LOGIN_FORM=true
@@ -80,7 +80,7 @@ services:
     container_name: nodered
     image: nodered/node-red:latest
     restart: unless-stopped
-    port:
+    ports:
       - 1880:1880
     volumes:
       - ./nodered:/data
