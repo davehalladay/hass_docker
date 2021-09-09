@@ -81,7 +81,7 @@ services:
     volumes:
       - ./nodered:/data
     depends_on:
-      - homeassistant
+      - home-assistant
       - mosquitto
     environment:
       - TZ={$TZ}
