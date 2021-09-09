@@ -19,9 +19,10 @@ logbook:
 map:
 sun:
 config:
+system_health:
 
 mqtt:
-  broker: mqtt
+  broker: mosquitto
   port: 1883
   username: !secret mqtt_username
   password: !secret mqtt_password
