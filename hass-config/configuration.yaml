@@ -10,7 +10,6 @@ homeassistant:
 
 frontend:
 http:
-  api_password: !secret http_password
   ip_ban_enabled: True
   login_attempts_threshold: 10
 discovery:

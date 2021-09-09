@@ -45,6 +45,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
   grafana:
+    container_name: grafana
     image: grafana/grafana:latest
     restart: always
     user: "$PUID:$PGID"
