@@ -24,7 +24,8 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     privileged: true
-    network_mode: host
+    ports:
+      - 8123:8123
 
   mosquitto:
     container_name: homeassistant_mqtt
