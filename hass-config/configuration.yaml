@@ -20,6 +20,7 @@ map:
 sun:
 config:
 system_health:
+stream:
 
 mqtt:
   broker: mosquitto
@@ -27,6 +28,10 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
   discovery: true
+
+aqualogic:
+  host: 192.168.68.127
+  port: 8899
 
 panel_iframe:
   nodered:
@@ -39,6 +44,27 @@ panel_iframe:
     icon: mdi:wrench
     url: http://skywalker.local:3000
     require_admin: true
+
+sensor:
+  - platform: aqualogic
+    monitored_conditions:
+      - pool_temp
+      - spa_temp
+      - status
+
+switch:
+  - platform: aqualogic
+    monitored_conditions:
+      - filter
+      - lights
+      - aux_1
+
+cover:
+  - platform: garadget
+    covers:
+      47004d001151353432393433:
+        access_token: !secret garadget_token
+        name: Garage Door
 
 recorder:
   db_url: !secret db_url

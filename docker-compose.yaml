@@ -28,6 +28,7 @@ services:
     links:
       - db
       - mosquitto
+    network_mode: host
 
   mosquitto:
     container_name: homeassistant_mqtt
