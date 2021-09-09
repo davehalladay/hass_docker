@@ -12,19 +12,19 @@ services:
   home-assistant:
     container_name: homeassistant
     restart: unless-stopped
-    image: homeassistant/home-assistant:latest
+    image: ghcr.io/home-assistant/home-assistant:stable
     volumes:
       - ./hass-config:/config
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       - db
       - mosquitto
-    ports:
-      - 8123:8123
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+    privileged: true
+    network_mode: host
 
   mosquitto:
     container_name: homeassistant_mqtt
