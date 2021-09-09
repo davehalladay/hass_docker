@@ -34,7 +34,7 @@ services:
     restart: always
     image: eclipse-mosquitto:latest
     ports:
-      - 8883:8883
+      - 9001:9001
       - 1883:1883
     environment:
       - PUID=${PUID}
