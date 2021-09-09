@@ -76,6 +76,24 @@ cover:
         access_token: !secret garadget_token
         name: Garage Door
 
+amcrest:
+  - host: 192.168.68.122
+    name: Garage
+    username: admin
+    password: !secret armcrest_password
+    resolution: high
+    stream_source: rtsp
+    binary_sensors:
+      - motion_detected
+  - host: 192.168.68.108
+    name: Playroom
+    username: admin
+    password: !secret armcrest_password
+    resolution: high
+    stream_source: rtsp
+    binary_sensors:
+      - motion_detected
+
 recorder:
   db_url: !secret db_url
   exclude:
