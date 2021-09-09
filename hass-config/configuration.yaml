@@ -22,6 +22,8 @@ config:
 system_health:
 stream:
 
+wemo:
+
 mqtt:
   broker: mosquitto
   port: 1883
