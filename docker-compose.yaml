@@ -24,7 +24,8 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     privileged: true
-    ports:
+    network_mode: host
+    expose:
       - 8123:8123
 
   mosquitto:
