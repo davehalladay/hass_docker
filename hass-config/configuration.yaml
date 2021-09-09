@@ -21,7 +21,7 @@ sun:
 config:
 
 mqtt:
-  broker: localhost
+  broker: mqtt
   port: 1883
   username: !secret mqtt_username
   password: !secret mqtt_password
