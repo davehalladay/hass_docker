@@ -75,7 +75,7 @@ services:
       # Read all environment variables from env file to configure mysql instance
       - .env
     ports:
-      -5432:5432
+      - 5432:5432
 
   nodered:
     container_name: nodered
