@@ -85,6 +85,8 @@ services:
       - home-assistant
       - mosquitto
     environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ={$TZ}
     links:
       - home-assistant
