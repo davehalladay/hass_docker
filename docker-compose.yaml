@@ -24,9 +24,9 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     privileged: true
-    #network_mode: host
-    ports:
-      - 8123:8123
+    network_mode: host
+    # ports:
+    #   - 8123:8123
 
   mosquitto:
     container_name: homeassistant_mqtt
@@ -74,7 +74,8 @@ services:
     env_file:
       # Read all environment variables from env file to configure mysql instance
       - .env
-    # network_mode: host
+    ports:
+      -5432:5432
 
   nodered:
     container_name: nodered
@@ -91,4 +92,3 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ={$TZ}
-    # network_mode: host
