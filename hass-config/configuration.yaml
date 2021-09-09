@@ -119,3 +119,19 @@ recorder:
       - sensor
       - switch
       - media_player
+
+automation:
+  - alias: Front Lights On
+    trigger:
+      platform: sun
+      event: sunset
+    action:
+      service: switch.turn_on
+      entity_id: switch.front_porch_overhead_light
+  - alias: Front Lights Off
+    trigger:
+      platform: sun
+      event: sunrise
+    action:
+      service: switch.turn_off
+      entity_id: switch.front_porch_overhead_light
