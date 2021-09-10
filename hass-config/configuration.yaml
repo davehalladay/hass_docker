@@ -124,6 +124,7 @@ recorder:
       - sensor
       - switch
       - media_player
+      - person
 
 automation:
   - alias: Front Lights On
