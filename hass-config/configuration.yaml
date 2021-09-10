@@ -135,3 +135,21 @@ automation:
     action:
       service: switch.turn_off
       entity_id: switch.front_porch_overhead_light
+  - alias: Toggle Office Sign On for Meeting
+    trigger:
+      platform: state
+      entity_id: calendar.david_halladay_sideinc_com
+      from: 'off'
+      to: 'on'
+    action:
+      - service: switch.turn_on
+        entity_id: switch.on_air_sign
+  - alias: Toggle Office Sign Off for Free
+    trigger:
+      platform: state
+      entity_id: calendar.david_halladay_sideinc_com
+      from: 'on'
+      to: 'off'
+    action:
+      - service: switch.turn_off
+        entity_id: switch.on_air_sign
