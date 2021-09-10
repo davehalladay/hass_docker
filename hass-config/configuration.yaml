@@ -71,6 +71,10 @@ cover:
         access_token: !secret garadget_token
         name: Garage Door
 
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+
 amcrest:
   - host: 192.168.68.122
     name: Garage
