@@ -63,16 +63,6 @@ switch:
       - filter
       - lights
       - aux_1
-device_tracker:
-  - platform: nmap_tracker
-    hosts:
-      - 192.168.68.69
-      - 192.168.68.68
-      - 192.168.68.67
-      - 192.168.68.58
-      - 192.168.68.50
-      - 192.168.68.54
-    home_interval: 5
 
 cover:
   - platform: garadget
