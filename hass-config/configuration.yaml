@@ -24,6 +24,7 @@ sun:
 config:
 system_health:
 stream:
+default_config:
 
 wemo:
 
