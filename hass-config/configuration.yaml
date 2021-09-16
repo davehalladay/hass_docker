@@ -36,7 +36,7 @@ mqtt:
 
 aqualogic:
   host: 192.168.68.127
-  port: 8899
+  port: 8234
 
 panel_iframe:
   nodered:
