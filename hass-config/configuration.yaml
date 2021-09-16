@@ -7,6 +7,7 @@ homeassistant:
   time_zone: America/New_York
   auth_providers:
     - type: homeassistant
+  customize: !include customize.yaml
 
 frontend:
 http:
