@@ -44,7 +44,7 @@ panel_iframe:
   nodered:
     title: NodeRed
     icon: mdi:shuffle-variant
-    url: http://skywalker.local:1880
+    url: https://home.davidhalladay.com/nodered
     require_admin: true
   grafana:
     title: Grafana
