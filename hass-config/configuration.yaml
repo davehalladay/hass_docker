@@ -44,7 +44,7 @@ panel_iframe:
   nodered:
     title: NodeRed
     icon: mdi:shuffle-variant
-    url: https://home.davidhalladay.com/nodered
+    url: https://home.davidhalladay.com/nodered-iframe
     require_admin: true
   grafana:
     title: Grafana
