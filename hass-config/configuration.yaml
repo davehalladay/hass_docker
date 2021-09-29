@@ -46,11 +46,6 @@ panel_iframe:
     icon: mdi:shuffle-variant
     url: https://home.davidhalladay.com/nodered-iframe
     require_admin: true
-  grafana:
-    title: Grafana
-    icon: mdi:wrench
-    url: http://skywalker.local:3000
-    require_admin: true
 
 sensor:
   - platform: aqualogic
