@@ -116,7 +116,18 @@ recorder:
       - switch
       - media_player
       - person
-
+device_tracker:
+  - platform: iphonedetect
+    consider_home: 60
+    new_device_defaults:
+      track_new_devices: true
+    hosts:
+      david_iphone: 192.168.68.50
+      sarah_iphone: 192.168.68.54
+      amanda_iphone: 192.168.68.115
+      noah_iphone: 192.168.68.67
+      brianna_iphone: 192.168.68.68
+      
 automation:
   - alias: Front Lights On
     trigger:
