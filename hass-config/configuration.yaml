@@ -52,7 +52,11 @@ sensor:
     monitored_conditions:
       - pool_temp
       - spa_temp
-      - status
+      - status    
+
+weather:
+  - platform: pirateweather
+    api_key: !secret pirate_weather_key
 
 switch:
   - platform: aqualogic
@@ -127,7 +131,7 @@ device_tracker:
       amanda_iphone: 192.168.68.115
       noah_iphone: 192.168.68.67
       brianna_iphone: 192.168.68.68
-      
+
 automation:
   - alias: Front Lights On
     trigger:
