@@ -52,11 +52,39 @@ sensor:
     monitored_conditions:
       - pool_temp
       - spa_temp
-      - status    
-
-weather:
-  - platform: pirateweather
-    api_key: !secret pirate_weather_key
+      - status
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    forecast:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    hourly_forecast:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    monitored_conditions:
+      - summary
+      - icon
+      - temperature
+      - precip_probability
+      - apparent_temperature
+      - humidity
+      - wind_speed
+      - temperature_high
+      - temperature_low
+      - nearest_storm_distance
+      - alerts
+    scan_interval:
+      minutes: 5
 
 switch:
   - platform: aqualogic
