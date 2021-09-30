@@ -3,7 +3,7 @@
 # - Home-Assistant   port 8123
 # - MySQL            port 3306 (internal)
 # - NodeRed          port 1880
-# - Mosquitto        port 8883
+# - Mosquitto        port 1883
 # - Grafana          port 3000
 
 version: "3"
@@ -22,7 +22,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=${TZ}
+      - TZ="America/New_York"
     privileged: true
     network_mode: host
     # ports:
@@ -38,7 +38,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ=${TZ}
+      - TZ="America/New_York"
     volumes:
       - ./mosquitto/passwd:/mosquitto/config/passwd
       - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
@@ -91,7 +91,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ={$TZ}
+      - TZ="America/New_York"
   nginx-proxy-manager:
     container_name: nginx_proxy
     image: jlesage/nginx-proxy-manager:latest
