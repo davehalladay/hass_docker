@@ -182,6 +182,16 @@ device_tracker:
       noah_iphone: 192.168.68.67
       brianna_iphone: 192.168.68.68
 
+group:
+  family:
+    name: Family
+    entities:
+      - person.david
+      - person.sarah
+      - person.amanda
+      - person.noah
+      - person.brianna
+
 automation:
   - alias: Front Lights On
     trigger:
