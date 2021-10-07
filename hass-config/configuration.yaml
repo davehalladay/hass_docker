@@ -115,6 +115,17 @@ google:
   client_id: !secret google_client_id
   client_secret: !secret google_client_secret
 
+telegram_bot:
+  platform: polling
+  api_key: !secret telegram_key
+  allowed_chat_ids:
+    - !secret telegram_chat_id
+
+notify:
+ - name: halladay_bot
+   platform: telegram
+   chat_id: !secret telegram_chat_id
+
 amcrest:
   - host: 192.168.68.122
     name: Garage
