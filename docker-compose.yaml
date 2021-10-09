@@ -101,3 +101,16 @@ services:
       - 4443:4443
     volumes:
       - ./nginx-proxy-manager/:/config:rw
+
+  rtl_433:
+    container_name: rtl_433
+    image: hertzg/rtl_433:latest
+    devices:
+      - '/dev/bus/usb/003/003'
+    command:
+      - '-Mtime:unix:usec:utc'
+      - '-Mbits'
+      - '-Mlevel'
+      - '-Mprotocol'
+      - '-Mstats:2:300'
+      - '-Fmqtt://mosquitto:1883,retain=1'
