@@ -105,11 +105,15 @@ switch:
       - aux_1
 
 cover:
-  - platform: garadget
-    covers:
-      47004d001151353432393433:
-        access_token: !secret garadget_token
-        name: Garage Door
+  - platform: mqtt
+    name: "Garage Door"
+    command_topic: "garadget/Garage/command"
+    state_topic: "garadget/Garage/status"
+    payload_open: "open"
+    payload_close: "close"
+    state_open: "open"
+    state_closed: "closed"
+    value_template: '{{ value_json.status }}'
 
 google:
   client_id: !secret google_client_id
