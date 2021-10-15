@@ -49,7 +49,7 @@ panel_iframe:
 
 sensor:
   - platform: sql
-    db_url: !secret db_url
+    db_url: !secret peripheral_url
     queries:
       - name: Rain Last Hour
         query: "select sum(amount_since_last_read) as rainfall from rain_sensor where read_at > (select now() - interval '1' hour);"
