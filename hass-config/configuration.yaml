@@ -48,6 +48,17 @@ panel_iframe:
     require_admin: true
 
 sensor:
+  - platform: sql
+    db_url: !secret db_url
+    queries:
+      - name: Rain Last Hour
+        query: "select sum(amount_since_last_read) as rainfall from rain_sensor where read_at > (select now() - interval '1' hour);"
+        column: "rainfall"
+        unit_of_measurement: mm
+      - name: Rain Last Day
+        query: "select sum(amount_since_last_read) as rainfall from rain_sensor where read_at > (select now() - interval '24' hour);"
+        column: "rainfall"
+        unit_of_measurement: mm
   - platform: aqualogic
     monitored_conditions:
       - pool_temp
