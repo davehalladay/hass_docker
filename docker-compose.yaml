@@ -94,6 +94,7 @@ services:
       - TZ="America/New_York"
   nginx-proxy-manager:
     container_name: nginx_proxy
+    restart: always
     image: jlesage/nginx-proxy-manager:latest
     ports:
       - 8181:8181
@@ -105,6 +106,7 @@ services:
   rtl_433:
     container_name: rtl_433
     image: hertzg/rtl_433:latest
+    restart: always
     devices:
       - '/dev/bus/usb/003/009'
     depends_on:
