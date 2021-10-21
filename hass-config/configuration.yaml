@@ -142,7 +142,7 @@ notify:
    chat_id: !secret telegram_chat_id
 
 amcrest:
-  - host: 192.168.68.122
+  - host: 192.168.68.133
     name: Garage
     username: admin
     password: !secret armcrest_password
