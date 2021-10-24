@@ -117,4 +117,4 @@ services:
       - '-Mlevel'
       - '-Mprotocol'
       - '-Mstats:2:300'
-      - '-Fmqtt://mosquitto:1883,retain=1,devices=rtl_433/f516718cce9b'
+      - '-Fmqtt://mosquitto:1883,retain=1,devices=rtl_433[/id]'
