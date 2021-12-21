@@ -97,8 +97,6 @@ services:
     restart: always
     image: jlesage/nginx-proxy-manager:latest
     ports:
-      - 80:80
-      - 443:443
       - 8181:8181
       - 8080:8080
       - 4443:4443
