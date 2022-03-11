@@ -38,7 +38,7 @@ mqtt:
   discovery: true
 
 aqualogic:
-  host: 192.168.68.127
+  host: 192.168.68.69
   port: 8899
 
 panel_iframe:
