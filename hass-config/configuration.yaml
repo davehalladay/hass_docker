@@ -198,9 +198,9 @@ device_tracker:
     hosts:
       david_iphone: 192.168.68.50
       sarah_iphone: 192.168.68.54
-      amanda_iphone: 192.168.68.115
-      noah_iphone: 192.168.68.67
-      brianna_iphone: 192.168.68.68
+      amanda_iphone: 192.168.68.76
+      noah_iphone: 192.168.68.77
+      brianna_iphone: 192.168.68.79
 
 group:
   family:
