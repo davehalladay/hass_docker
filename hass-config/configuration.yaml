@@ -197,7 +197,7 @@ device_tracker:
       track_new_devices: true
     hosts:
       david_iphone: 192.168.68.50
-      sarah_iphone: 192.168.68.54
+      sarah_iphone: 192.168.68.60
       amanda_iphone: 192.168.68.76
       noah_iphone: 192.168.68.77
       brianna_iphone: 192.168.68.79
