@@ -147,7 +147,7 @@ notify:
    chat_id: !secret telegram_chat_id
 
 amcrest:
-  - host: 192.168.68.133
+  - host: 192.168.68.53
     name: Garage
     username: admin
     password: !secret armcrest_password
@@ -155,7 +155,7 @@ amcrest:
     stream_source: rtsp
     binary_sensors:
       - motion_detected
-  - host: 192.168.68.108
+  - host: 192.168.68.64
     name: Playroom
     username: admin
     password: !secret armcrest_password
