@@ -220,3 +220,4 @@ camera:
     draw: ['all']
     attributes:
       - calibration_points
+automation: !include automations.yaml
