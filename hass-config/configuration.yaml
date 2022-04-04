@@ -221,4 +221,5 @@ camera:
     attributes:
       - calibration_points
       - room_numbers
+      - rooms
 automation: !include automations.yaml
