@@ -220,4 +220,5 @@ camera:
     draw: ['all']
     attributes:
       - calibration_points
+      - room_numbers
 automation: !include automations.yaml
