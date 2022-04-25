@@ -102,14 +102,14 @@ services:
       - 4443:4443
     volumes:
       - ./nginx-proxy-manager/:/config:rw
-      
+
   # https://github.com/hertzg/rtl_433_docker
   rtl_433:
     container_name: rtl_433
     image: hertzg/rtl_433:latest
     restart: always
     devices:
-      - '/dev/bus/usb/003/006'
+      - '/dev/bus/usb/003/002'
     depends_on:
       - mosquitto
     command:
