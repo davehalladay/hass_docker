@@ -109,7 +109,7 @@ services:
     image: hertzg/rtl_433:latest
     restart: always
     devices:
-      - '/dev/bus/usb/003/002'
+      - '/dev/bus/usb/003/012'
     depends_on:
       - mosquitto
     command:
