@@ -126,7 +126,6 @@ services:
     hostname: ${HOSTNAME}
     domainname: ${DOMAIN_NAME}
     ports:
-      - 443:443/tcp
       - 53:53/tcp
       - 53:53/udp
       - ${PIHOLE_WEBPORT:-80}:80/tcp
