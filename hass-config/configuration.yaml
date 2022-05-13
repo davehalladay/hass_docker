@@ -38,7 +38,7 @@ mqtt:
   discovery: true
 
 aqualogic:
-  host: 192.168.68.69
+  host: !secret aqualogic_host
   port: 8899
 
 panel_iframe:
@@ -147,7 +147,7 @@ notify:
    chat_id: !secret telegram_chat_id
 
 amcrest:
-  - host: 192.168.68.53
+  - host: !secret garage_camera_host
     name: Garage
     username: admin
     password: !secret armcrest_password
@@ -155,7 +155,7 @@ amcrest:
     stream_source: rtsp
     binary_sensors:
       - motion_detected
-  - host: 192.168.68.64
+  - host: !secret playroom_camera_host
     name: Playroom
     username: admin
     password: !secret armcrest_password
@@ -196,11 +196,10 @@ device_tracker:
     new_device_defaults:
       track_new_devices: true
     hosts:
-      david_iphone: 192.168.68.50
-      sarah_iphone: 192.168.68.60
-      amanda_iphone: 192.168.68.76
-      noah_iphone: 192.168.68.88
-      brianna_iphone: 192.168.68.79
+      sarah_iphone: !secret sarah_iphone_host
+      amanda_iphone: !secret amanda_iphone_host
+      noah_iphone: !secret noah_iphone_host
+      brianna_iphone: !secret brianna_iphone_host
 
 group:
   family:
