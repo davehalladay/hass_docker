@@ -126,8 +126,8 @@ services:
     hostname: ${HOSTNAME}
     domainname: ${DOMAIN_NAME}
     ports:
-      - 53:53/tcp
-      - 53:53/udp
+      - 192.168.68.59:53:53/tcp
+      - 192.168.68.59:53:53/udp
       - ${PIHOLE_WEBPORT:-80}:80/tcp
     environment:
       - FTLCONF_REPLY_ADDR4=${FTLCONF_REPLY_ADDR4}
