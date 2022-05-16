@@ -16,7 +16,7 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     # - 192.168.68.0/20  # Local Lan
-    - 172.10.0.0/24 # Docker net
+    - 172.17.0.0/16  # Docker net
     - 127.0.0.1
 discovery:
 conversation:
