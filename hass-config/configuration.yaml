@@ -46,7 +46,7 @@ panel_iframe:
   nodered:
     title: NodeRed
     icon: mdi:shuffle-variant
-    url: https://home.davidhalladay.com/nodered-iframe
+    url: http://skywalker.local:1880/nodered-iframe
     require_admin: true
 
 sensor:
