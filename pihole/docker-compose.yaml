@@ -25,5 +25,4 @@ services:
     volumes:
       - ./etc_pihole-unbound:/etc/pihole:rw
       - ./etc_pihole_dnsmasq-unbound:/etc/dnsmasq.d:rw
-      - './resolv.conf:/etc/resolv.conf:rw'
     restart: unless-stopped
