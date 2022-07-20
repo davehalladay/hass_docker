@@ -234,7 +234,7 @@ automation: !include automations.yaml
 
 o365:
   accounts:
-    - account_name: david.halladay@avalara.com
+    - account_name: !secret o365_account_name
       client_id: !secret o365_client_id
       client_secret: !secret o365_client_secret
       alt_auth_method: False
