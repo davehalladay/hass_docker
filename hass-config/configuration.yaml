@@ -140,10 +140,6 @@ cover:
     state_closed: "closed"
     value_template: '{{ value_json.status }}'
 
-google:
-  client_id: !secret google_client_id
-  client_secret: !secret google_client_secret
-
 telegram_bot:
   platform: polling
   api_key: !secret telegram_key
