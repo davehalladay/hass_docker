@@ -47,13 +47,13 @@ mqtt:
   discovery: true
   cover:
     - name: "Garage Door"
-    command_topic: "garadget/Garage/command"
-    state_topic: "garadget/Garage/status"
-    payload_open: "open"
-    payload_close: "close"
-    state_open: "open"
-    state_closed: "closed"
-    value_template: '{{ value_json.status }}'
+      command_topic: "garadget/Garage/command"
+      state_topic: "garadget/Garage/status"
+      payload_open: "open"
+      payload_close: "close"
+      state_open: "open"
+      state_closed: "closed"
+      value_template: '{{ value_json.status }}'
 
 aqualogic:
   host: !secret aqualogic_host
