@@ -40,11 +40,6 @@ input_number:
     step: 1
 
 mqtt:
-  broker: mosquitto
-  port: 1883
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  discovery: true
   cover:
     - name: "Garage Door"
       command_topic: "garadget/Garage/command"
@@ -203,6 +198,7 @@ device_tracker:
       amanda_iphone: !secret amanda_iphone_host
       noah_iphone: !secret noah_iphone_host
       brianna_iphone: !secret brianna_iphone_host
+      samantha_iphone: !secret samantha_iphone_host
 
 group:
   family:
