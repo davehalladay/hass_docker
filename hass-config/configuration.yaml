@@ -8,6 +8,7 @@ homeassistant:
   auth_providers:
     - type: homeassistant
   customize: !include customize.yaml
+  country: US
 
 frontend:
 http:
