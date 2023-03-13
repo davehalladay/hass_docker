@@ -104,18 +104,18 @@ services:
       - ./nginx-proxy-manager/:/config:rw
 
   # https://github.com/hertzg/rtl_433_docker
-  rtl_433:
-    container_name: rtl_433
-    image: hertzg/rtl_433:alpine-master
-    restart: always
-    devices:
-      - '/dev/bus/usb/003/002'
-    depends_on:
-      - mosquitto
-    command:
-      - '-Mtime:unix:usec:utc'
-      - '-Mbits'
-      - '-Mlevel'
-      - '-Mprotocol'
-      - '-Mstats:2:300'
-      - '-Fmqtt://mosquitto:1883,retain=1,devices=rtl_433[/id]'
+  # rtl_433:
+  #   container_name: rtl_433
+  #   image: hertzg/rtl_433:alpine-master
+  #   restart: always
+  #   devices:
+  #     - '/dev/bus/usb/003/002'
+  #   depends_on:
+  #     - mosquitto
+  #   command:
+  #     - '-Mtime:unix:usec:utc'
+  #     - '-Mbits'
+  #     - '-Mlevel'
+  #     - '-Mprotocol'
+  #     - '-Mstats:2:300'
+  #     - '-Fmqtt://mosquitto:1883,retain=1,devices=rtl_433[/id]'
