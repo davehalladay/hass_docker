@@ -177,6 +177,7 @@ camera:
       - calibration_points
       - room_numbers
       - rooms
+    auto_update: false
 automation: !include automations.yaml
 
 o365:
