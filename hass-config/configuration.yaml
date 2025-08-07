@@ -2,9 +2,9 @@ homeassistant:
   name: Home
   latitude: !secret home_latitude
   longitude: !secret home_longitude
-  elevation: 37
+  elevation: 350
   unit_system: imperial
-  time_zone: America/New_York
+  time_zone: America/Los_Angeles
   auth_providers:
     - type: homeassistant
   customize: !include customize.yaml

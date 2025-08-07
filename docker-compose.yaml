@@ -79,7 +79,7 @@ services:
 
   nodered:
     container_name: nodered
-    image: nodered/node-red:latest
+    image: nodered/node-red:3.1.15
     restart: unless-stopped
     ports:
       - 1880:1880
