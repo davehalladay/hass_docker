@@ -139,17 +139,6 @@ recorder:
       - switch
       - media_player
       - person
-device_tracker:
-  - platform: iphonedetect
-    consider_home: 60
-    new_device_defaults:
-      track_new_devices: true
-    hosts:
-      sarah_iphone: !secret sarah_iphone_host
-      amanda_iphone: !secret amanda_iphone_host
-      noah_iphone: !secret noah_iphone_host
-      brianna_iphone: !secret brianna_iphone_host
-      samantha_iphone: !secret samantha_iphone_host
 
 group:
   family:
