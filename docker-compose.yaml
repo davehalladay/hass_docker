@@ -19,7 +19,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ="America/New_York"
+      - TZ="America/Los_Angeles"
     privileged: true
     network_mode: host
     # ports:
@@ -35,7 +35,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ="America/New_York"
+      - TZ="America/Los_Angeles"
     volumes:
       - ./mosquitto/passwd:/mosquitto/config/passwd
       - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
@@ -88,7 +88,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
-      - TZ="America/New_York"
+      - TZ="America/Los_Angeles"
   nginx-proxy-manager:
     container_name: nginx_proxy
     restart: always
@@ -99,20 +99,24 @@ services:
       - 4443:4443
     volumes:
       - ./nginx-proxy-manager/:/config:rw
-
-  # https://github.com/hertzg/rtl_433_docker
-  # rtl_433:
-  #   container_name: rtl_433
-  #   image: hertzg/rtl_433:alpine-master
-  #   restart: always
-  #   devices:
-  #     - '/dev/bus/usb/003/002'
-  #   depends_on:
-  #     - mosquitto
-  #   command:
-  #     - '-Mtime:unix:usec:utc'
-  #     - '-Mbits'
-  #     - '-Mlevel'
-  #     - '-Mprotocol'
-  #     - '-Mstats:2:300'
-  #     - '-Fmqtt://mosquitto:1883,retain=1,devices=rtl_433[/id]'
+  
+  n8n:
+    container_name: n8n
+    image: docker.n8n.io/n8nio/n8n:latest
+    restart: unless-stopped
+    ports:
+      - 5678:5678
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=America/Los_Angeles
+      - GENERIC_TIMEZONE=America/Los_Angeles
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+    volumes:
+      - ./n8n:/home/node/.n8n
+    depends_on:
+      - home-assistant
+      - mosquitto

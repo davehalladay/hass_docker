@@ -31,40 +31,10 @@ default_config:
 
 wemo:
 
-mqtt:
-  cover:
-    - name: "Garage Door"
-      command_topic: "garadget/Garage/command"
-      state_topic: "garadget/Garage/status"
-      payload_open: "open"
-      payload_close: "close"
-      state_open: "open"
-      state_closed: "closed"
-      value_template: '{{ value_json.status }}'
-
-
 notify:
  - name: halladay_bot
    platform: telegram
    chat_id: !secret telegram_chat_id
-
-amcrest:
-  - host: !secret garage_camera_host
-    name: Garage
-    username: admin
-    password: !secret armcrest_password
-    resolution: high
-    stream_source: rtsp
-    binary_sensors:
-      - motion_detected
-  - host: !secret playroom_camera_host
-    name: Playroom
-    username: admin
-    password: !secret armcrest_password
-    resolution: high
-    stream_source: rtsp
-    binary_sensors:
-      - motion_detected
 
 recorder:
   db_url: !secret db_url
@@ -101,15 +71,6 @@ group:
       - person.sarah
       - person.noah
       - person.brianna
-camera:
-  - platform: xiaomi_cloud_map_extractor
-    host: !secret xiaomi_vacuum_host
-    token: !secret xiaomi_vacuum_token
-    username: !secret xiaomi_cloud_username
-    password: !secret xiaomi_cloud_password
-    draw: ['all']
-    attributes:
-      - calibration_points
-      - rooms
-    auto_update: false
+      - person.elana
+
 automation: !include automations.yaml
