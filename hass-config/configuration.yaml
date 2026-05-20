@@ -22,7 +22,6 @@ http:
 conversation:
 history:
 logbook:
-map:
 sun:
 config:
 system_health:
