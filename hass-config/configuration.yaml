@@ -30,11 +30,6 @@ default_config:
 
 wemo:
 
-notify:
- - name: halladay_bot
-   platform: telegram
-   chat_id: !secret telegram_chat_id
-
 recorder:
   db_url: !secret db_url
   exclude:
