@@ -1,10 +1,14 @@
 # Docker compose file for HASS
 #
 # - Home-Assistant   port 8123
-# - MySQL            port 3306 (internal)
+# - PostgreSQL       port 5432 (internal)
 # - NodeRed          port 1880
 # - Mosquitto        port 1883
 # - Grafana          port 3000
+# - n8n              port 5678
+# - Jellyfin         port 8096
+# - DuckDNS          (DNS updates)
+# - nginx            port 8181, 8080, 4443
 services:
   home-assistant:
     container_name: homeassistant
@@ -119,3 +123,32 @@ services:
     depends_on:
       - home-assistant
       - mosquitto
+
+  jellyfin:
+    container_name: jellyfin
+    image: jellyfin/jellyfin:latest
+    restart: unless-stopped
+    ports:
+      - 8096:8096
+    volumes:
+      - ./jellyfin/config:/config
+      - ./jellyfin/cache:/cache
+      - ./jellyfin/media:/media
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ="America/Los_Angeles"
+
+  duckdns:
+    container_name: duckdns
+    image: linuxserver/duckdns:latest
+    restart: unless-stopped
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ="America/Los_Angeles"
+      - SUBDOMAINS=${DUCKDNS_SUBDOMAINS}
+      - TOKEN=${DUCKDNS_TOKEN}
+      - LOG_FILE=true
+    volumes:
+      - ./duckdns:/config
